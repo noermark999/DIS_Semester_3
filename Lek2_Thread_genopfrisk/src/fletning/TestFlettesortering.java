@@ -24,11 +24,14 @@ public class TestFlettesortering {
 
 		long l1,l2;
 		l1 = System.nanoTime();
+		/*
 		myThread1.start();
 		myThread2.start();
 		myThread1.join();
 		myThread2.join();
 		fletteSortering.merge(list,0,list.size()/2-1, list.size()-1);
+		 */
+		fletteSortering.mergesort(list,0,list.size()-1);
 
 		l2 = System.nanoTime();
 		System.out.println();
