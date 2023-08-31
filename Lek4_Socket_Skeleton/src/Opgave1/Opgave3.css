@@ -1,0 +1,41 @@
+#body {
+    display: inline-grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "billede1 tekst1"
+    "billede2 tekst2"
+    ". link";
+}
+
+.billede1 {
+    grid-area: billede1;
+}
+
+.tekst1 {
+    grid-area: tekst1;
+}
+
+.billede2 {
+    grid-area: billede2;
+}
+
+.tekst2 {
+    grid-area: tekst2;
+}
+
+.link {
+    grid-area: link;
+}
+
+@media screen and (max-width: 750px) {
+    #body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "billede1" 
+        "tekst1"
+        "billede2"
+        "tekst2"
+        "link";
+    }
+}
