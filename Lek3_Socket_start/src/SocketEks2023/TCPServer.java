@@ -9,23 +9,25 @@ import java.net.Socket;
 
 public class TCPServer {
 
-	public static void main(String[] args) throws Exception {
-		
-		String clientSentence;
-		String capitalizedSentence;
-		ServerSocket welcomSocket = new ServerSocket(6789);
+    public static void main(String[] args) throws Exception {
 
-		while(true){
-			Socket connectionSocket = welcomSocket.accept();
-			BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
-			BufferedReader sentenceFromServer = new BufferedReader(new InputStreamReader(System.in));
-			DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
-			clientSentence = inFromClient.readLine();
-			System.out.println("Fra Client: " + clientSentence);
-			capitalizedSentence = sentenceFromServer.readLine() + '\n';
-			outToClient.writeBytes(capitalizedSentence);
-		}
+        String clientSentence;
+        String capitalizedSentence;
+        ServerSocket welcomSocket = new ServerSocket(6789);
 
-	}
+        while (true) {
+            Socket connectionSocket = welcomSocket.accept();
+
+            BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+            BufferedReader sentenceFromServer = new BufferedReader(new InputStreamReader(System.in));
+            DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
+            clientSentence = inFromClient.readLine();
+            System.out.println("Fra Client: " + clientSentence);
+            capitalizedSentence = sentenceFromServer.readLine() + '\n';
+            outToClient.writeBytes(capitalizedSentence);
+
+        }
+
+    }
 
 }

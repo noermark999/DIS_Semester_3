@@ -21,7 +21,7 @@ public class ServerThread extends Thread {
             String[] opdelt = clientSentence.split(" ");
 
             outToClient.writeBytes("HTTP 200 OK\n");
-            outToClient.writeBytes("Content-Type: " + ContentType(opdelt[1]));
+            outToClient.writeBytes(ContentType(opdelt[1]));
             outToClient.writeBytes("Connection: Close\n");
             outToClient.writeBytes("\n");
             byte[] bytes = read(opdelt[1]);

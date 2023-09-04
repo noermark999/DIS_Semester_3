@@ -3,7 +3,7 @@ package SocketEks2023;
 import java.io.*;
 import java.net.*;
 
-class UDPClient {
+class HejUDPClient {
 	public static void main(String args[]) throws Exception {
 		BufferedReader inFromUser = new BufferedReader(new InputStreamReader(
 				System.in));
