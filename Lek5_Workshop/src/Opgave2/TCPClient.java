@@ -1,8 +1,5 @@
 package Opgave2;
 
-import Opgave3.Listener;
-import Opgave3.Writer;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -12,17 +9,25 @@ import java.net.Socket;
 
 public class TCPClient {
 
-    public static void main(String[] args) throws Exception, IOException {
+	public static void main(String[] args) throws Exception, IOException {
 
-        Socket clientSocket = new Socket("10.10.132.248", 6789);
+		String sentence;
+		String modifiedSentence;
+		while (true) {
+		BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
 
-        Listener listener = new Listener(clientSocket);
-        listener.start();
-        Writer writer = new Writer(clientSocket);
-        writer.start();
+		Socket clientSocket = new Socket("localhost", 6789);
+		DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
 
-        //clientSocket.close();
 
-    }
+		BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+		sentence = inFromUser.readLine();
+		outToServer.writeBytes(sentence + '\n');
+		modifiedSentence = inFromServer.readLine();
+		System.out.println("FROM SERVER: " + modifiedSentence);
+		}
+		//clientSocket.close();
+
+	}
 
 }

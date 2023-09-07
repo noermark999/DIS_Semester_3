@@ -1,4 +1,4 @@
-package Opgave3;
+package Opgave4UDP;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

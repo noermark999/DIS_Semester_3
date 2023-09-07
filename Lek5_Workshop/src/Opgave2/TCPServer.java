@@ -1,8 +1,5 @@
 package Opgave2;
 
-import Opgave3.Listener;
-import Opgave3.Writer;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -29,10 +26,13 @@ public class TCPServer {
                 }
             }
             if(!firstTime) {
-                Listener listener = new Listener(connectionSocket);
-                listener.start();
-                Writer writer = new Writer(connectionSocket);
-                writer.start();
+                BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+                BufferedReader serverSentence = new BufferedReader(new InputStreamReader(System.in));
+                DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
+                clientSentence = inFromClient.readLine();
+                System.out.println("Fra klient: " + clientSentence);
+                capitalizedSentence = serverSentence.readLine() + '\n';
+                outToClient.writeBytes(capitalizedSentence);
             } else {
                 welcomSocket.close();
             }
