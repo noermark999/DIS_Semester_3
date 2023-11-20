@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DIS_Semester_3.iml" filepath="$PROJECT_DIR$/DIS_Semester_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lek16_BankOpgave/Lek16_BankOpgave.iml" filepath="$PROJECT_DIR$/Lek16_BankOpgave/Lek16_BankOpgave.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lek21_sikkerhed/Lek21_sikkerhed.iml" filepath="$PROJECT_DIR$/Lek21_sikkerhed/Lek21_sikkerhed.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lek2_Thread_genopfrisk/Lek2_Thread_genopfrisk.iml" filepath="$PROJECT_DIR$/Lek2_Thread_genopfrisk/Lek2_Thread_genopfrisk.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lek3_Socket_start/Lek3_Socket_start.iml" filepath="$PROJECT_DIR$/Lek3_Socket_start/Lek3_Socket_start.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lek4_Socket_Skeleton/Lek4_Socket_Skeleton.iml" filepath="$PROJECT_DIR$/Lek4_Socket_Skeleton/Lek4_Socket_Skeleton.iml" />

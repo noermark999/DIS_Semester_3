@@ -32,6 +32,7 @@ public class DNSThread extends Thread {
                 String sentence = new String(receivePacket.getData());
                 InetAddress IPAddress = receivePacket.getAddress();
                 int port = receivePacket.getPort();
+                System.out.println(sentence);
                 String[] hostname = sentence.split("\u0000");
                 System.out.println(hostname[0]);
                 String toClient = adresser.get(hostname[0]);
